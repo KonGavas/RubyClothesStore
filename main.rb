@@ -8,4 +8,3 @@ shoppingcart = Shoppingcart.new()
 AppInterface.welcometext
 
 AppInterface.menutext
-
