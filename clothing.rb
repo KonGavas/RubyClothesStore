@@ -13,7 +13,7 @@ class Clothing
         when 'sweater'
             @price = 20
         else
-            raise StandardError.new "From Clothing initialize method: Invalid clothing type!"
+            raise StandardError.new "From Clothing > initialize method: Invalid clothing type!"
         end
     end
 end

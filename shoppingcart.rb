@@ -34,12 +34,16 @@ class Shoppingcart
         end
         
         #For every t-shirt that you buy, you will get a second t-shirt for free
-        if @contents['tshirts'] >= 2
-            cost += (@contents['tshirts'] / 2) * 15
-            cost += (@contents['tshirts'] % 2) * 15
-        else
-            cost += @contents['tshirts'] * 15
-        end
+        #As long as @contents['tshirts'] is always Int, we do not need this if statement
+        # if @contents['tshirts'] >= 2
+        #     cost += (@contents['tshirts'] / 2) * 15
+        #     cost += (@contents['tshirts'] % 2) * 15
+        # else
+        #     cost += @contents['tshirts'] * 15
+        # end
+
+        cost += (@contents['tshirts'] / 2) * 15
+        cost += (@contents['tshirts'] % 2) * 15
         
         return cost
     end
