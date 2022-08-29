@@ -16,6 +16,7 @@ ruby /directory/of/project/main.rb
 ```
 ## To run the unit-tests do 
 cd /directory/of/project
+
 bundle exec rake
 
 ## Requirements
