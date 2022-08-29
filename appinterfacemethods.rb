@@ -27,9 +27,9 @@ module AppInterface
                 +"given parameter is not of type Shoppingcart"
         end
         puts "Shopping Cart Contents:"
-        puts " Jeans: #{shoppingcart.contents['jeans']}"
-        puts " T-Shirts: #{shoppingcart.contents['tshirts']}"
-        puts " Sweaters: #{shoppingcart.contents['sweaters']}"
+        puts " Jeans: #{shoppingcart.getjeanscount}"
+        puts " T-Shirts: #{shoppingcart.gettshirtscount}"
+        puts " Sweaters: #{shoppingcart.getsweaterscount}"
     end
 
     def checkout(totalcost)

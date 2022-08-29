@@ -9,7 +9,7 @@ name: Ruby
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "requirements/arrayofarrays" ]
   pull_request:
     branches: [ "main" ]
 
