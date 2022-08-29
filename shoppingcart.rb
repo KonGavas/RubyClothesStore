@@ -3,9 +3,9 @@ class Shoppingcart
 
     def initialize
         @contents = {
-            'jeans': 0,
-            'tshirts': 0,
-            'sweaters': 0
+            'jeans' => 0,
+            'tshirts' => 0,
+            'sweaters' => 0
         }
     end
 
@@ -22,7 +22,7 @@ class Shoppingcart
     end
 
     def estimatetotalcost
-        cost = 0
+        cost = 0.0
         #There is no promotion for jeans
         cost += @contents['jeans'] * 50
         
