@@ -1,4 +1,5 @@
 class Shoppingcart
+    # private attr_accessor :contents
     attr_accessor :contents
 
     def initialize
@@ -12,6 +13,7 @@ class Shoppingcart
     def getjeanscount
         jeansarray = @contents.select{|a| a[0]=='jeans'}[0]
         return jeansarray[1]
+        # jeansarray[1]
     end
 
     def gettshirtscount
@@ -37,6 +39,30 @@ class Shoppingcart
     def addsweatertocart
         sweatersarray = @contents.select{|a| a[0]=='sweaters'}[0]
         sweatersarray[1] += 1
+    end
+
+    def estimate_just_by_input(arrayofarrays)
+
+        jeanscount = arrayofarrays.select{|a| a[0]=='jeans'}.map{|b| b[1]}.sum
+        sweaterscount = arrayofarrays.select{|a| a[0]=='sweaters'}.map{|b| b[1]}.sum
+        tshirtscount = arrayofarrays.select{|a| a[0]=='tshirts'}.map{|b| b[1]}.sum
+
+        cost = 0
+
+        #There is no promotion for jeans
+        cost += jeanscount * 50
+        
+        #If you buy more than two sweaters, you will have a 5% discount on the sweaters
+        if sweaterscount > 2
+            cost += 0.95 * (sweaterscount * 20)
+        else
+            cost += sweaterscount * 20
+        end
+
+        cost += (tshirtscount / 2) * 15
+        cost += (tshirtscount % 2) * 15
+
+        cost
     end
 
     def estimatetotalcost
